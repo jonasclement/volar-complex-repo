@@ -1,11 +1,18 @@
 {
-  "files": [],
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["*.d.ts", "src/**/*", "bin/**/*", ".eslintrc.*"],
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "types": ["vite/client", "@types/angular", "resize-observer-browser"]
+  },
   "references": [
     {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
+      "path": "tsconfig.config.json"
     }
   ]
 }
